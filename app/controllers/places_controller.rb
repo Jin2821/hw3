@@ -4,11 +4,12 @@ class PlacesController < ApplicationController
    @places = Place.all
   end
 
-  def new
-    @place = Place.new
+  def show
+    @place= Place.find_by({"id"=>params["id"]})
   end
 
-  def show
+  def new
+    @place = Place.new
   end
 
   def create
